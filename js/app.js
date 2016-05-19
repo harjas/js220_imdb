@@ -16,6 +16,6 @@ angular.module('imdbApp')
 
     //application should route back to list if anything else is entered 
     .otherwise({
-    	redirectTo: '/'
+    	redirectTo: '/list'
     });
   }]);
