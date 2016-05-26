@@ -1,7 +1,7 @@
 //This is where application config goes
-angular.module('movie', ['ngRoute']);
+angular.module('app.movie', ['ngRoute','imdb.services']);
 
-angular.module('movie')
+angular.module('app.movie')
   .config(['$routeProvider',function($routeProvider) {
     //add routes named list, gallery and details
     //application should route back to list if anything else is entered
