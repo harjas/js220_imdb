@@ -1,15 +1,17 @@
 //This is where application config goes
-angular.module('app.movie', ['ngRoute','imdb.services']);
+angular.module('app.movie', ['ngRoute','imdb.service']);
 
 angular.module('app.movie')
-  .config(['$routeProvider',function($routeProvider) {
+  .config(['$routeProvider', function($routeProvider) {
     //add routes named list, gallery and details
     //application should route back to list if anything else is entered
     $routeProvider.when('/',{
-      templateUrl: '/templates/list.html'
+      templateUrl: '/templates/list.html',
+      controller: 'ListController'
     })
     .when('/list',{
-      templateUrl: '/templates/list.html'
+      templateUrl: '/templates/list.html',
+      controller: 'ListController'
     })
     .when('/gallery',{
       templateUrl: '/templates/gallery.html'
@@ -20,4 +22,4 @@ angular.module('app.movie')
     .otherwise({
       redirectTo: '/'
     })
-  }])
+  }]);//end config

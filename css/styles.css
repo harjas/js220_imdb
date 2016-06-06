@@ -1,0 +1,8 @@
+#movieCovers {
+  width: 6em;
+  height: auto;
+}
+
+li.movieList {
+ list-style: none;
+}
