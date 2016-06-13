@@ -5,9 +5,10 @@
 <br>
 <input type="text" placeholder="search" ng-model="searchText">
 
+
 <ul>
   <li class="movieList" ng-repeat="movie in movies | filter:searchText | orderBy: 'title'">
-  <img id="movieCovers" src="/data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}" />  {{movie.title}}, rated: {{movie.rating}}, runtime: {{movie.runtime}}, genre: {{movie.genre}}, language: {{movie.language}}, metascore:{{movie.metascore}}
+  <img id="movieCovers" src="/data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}" /> <a href="#/details/{{movie.rank}}">{{movie.title}}</a>, rated: {{movie.rating}}, runtime: {{movie.runtime}}, genre: {{movie.genre}}, language: {{movie.language}}, metascore:{{movie.metascore}}, rank:{{movie.rank}}
   </li>
 </ul>
 

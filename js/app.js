@@ -16,8 +16,9 @@ angular.module('app.movie')
     .when('/gallery',{
       templateUrl: '/templates/gallery.html'
     })
-    .when('/details',{
-      templateUrl: '/templates/details.html'
+    .when('/details/:movieId',{
+      templateUrl: '/templates/details.html',
+      controller: 'DetailsController'
     })
     .otherwise({
       redirectTo: '/'

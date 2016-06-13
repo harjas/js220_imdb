@@ -1,3 +1,15 @@
 <div>
   <h1>This is the details page</h1>
+
+  <img id="movieCovers" src="/data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}" /> <a href="#/details/{{movie.rank}}">{{movie.title}}</a>, rated: {{movie.rating}}, runtime: {{movie.runtime}}, genre: {{movie.genre}}, language: {{movie.language}}, metascore:{{movie.metascore}}, rank:{{movie.rank}}
+
+</div>
+
+<div class="">
+  <nav>
+    <ul class="pager">
+      <li ng-show="movie.rank > 1"><a href="#/details/{{movie.rank-1}}">Previous</a></li>
+      <li ng-show="movie.rank < listSize"><a href="#/details/{{movie.rank+1}}">Next</a></li>
+    </ul>
+  </nav>
 </div>
