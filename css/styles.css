@@ -3,6 +3,22 @@
   height: auto;
 }
 
-li.movieList {
+.movieList {
  list-style: none;
+}
+
+.movieResult {
+  float:left;
+  clear:both;
+  margin-top: 2em;
+}
+
+.details {
+  float: left;
+  clear:both;
+}
+
+.pagerDiv {
+  float: left;
+  clear:both;
 }

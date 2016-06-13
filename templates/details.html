@@ -1,11 +1,44 @@
-<div>
-  <h1>This is the details page</h1>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/">Imdb Top 250</a>
+    </div>
 
-  <img id="movieCovers" src="/data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}" /> <a href="#/details/{{movie.rank}}">{{movie.title}}</a>, rated: {{movie.rating}}, runtime: {{movie.runtime}}, genre: {{movie.genre}}, language: {{movie.language}}, metascore:{{movie.metascore}}, rank:{{movie.rank}}
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" ng-model='searchText'>
+        </div>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div>
+  <h1>{{movie.title}}</h1>
+
+  <span ng-show="movie.imdbID" class="ng-hide details"><img id="movieCovers" src="/data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}" /></span>
+  <span ng-show="movie.rated" class="ng-hide details">rated: {{movie.rated}}</span>
+  <span ng-show="movie.runtime" class="ng-hide details">runtime: {{movie.runtime}}</span>
+  <span ng-show="movie.genre" class="ng-hide details">genre: {{movie.genre}}</span>
+  <span ng-show="movie.language" class="ng-hide details">language: {{movie.language}}</span>
+  <span ng-show="movie.metascore" class="ng-hide details">metascore:{{movie.metascore}}</span>
+  <span ng-show="movie.rank" class="ng-hide details">rank:{{movie.rank}}</span>
+
+  <p style="visibility:hidden">{{movie}}</p>
 
 </div>
 
-<div class="">
+<div class="pagerDiv">
   <nav>
     <ul class="pager">
       <li ng-show="movie.rank > 1"><a href="#/details/{{movie.rank-1}}">Previous</a></li>

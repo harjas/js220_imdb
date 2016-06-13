@@ -3,6 +3,7 @@ angular.module('app.movie')
 
     //load movies on page load
     ImdbMovies.getMovies().success(function(data) {
+      $scope.movies = data;
       $scope.movie = data[$routeParams.movieId-1];
       $scope.listSize = data.length;
     });
