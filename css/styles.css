@@ -1,16 +1,10 @@
 #movieCovers {
-  width: 6em;
+  width: 15.125em;
   height: auto;
 }
 
 .movieList {
  list-style: none;
-}
-
-.movieResult {
-  float:left;
-  clear:both;
-  margin-top: 2em;
 }
 
 .details {

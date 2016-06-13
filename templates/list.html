@@ -3,18 +3,26 @@
   <button ng-click='sortByRating'>Sort by Rank</button>
 <br>
 <input type="text" placeholder="search" ng-model="searchText">
-  <div class="movieResult" ng-repeat="movie in movies | filter:searchText | orderBy: 'rank'">
-    <ul>
-    <!--  <img id="movieCovers" src="/data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}" /> <a href="#/details/{{movie.rank}}">{{movie.title}}</a>, rated: {{movie.rated}}, runtime: {{movie.runtime}}, genre: {{movie.genre}}, language: {{movie.language}}, metascore:{{movie.metascore}}, rank:{{movie.rank}} -->
-        <li ng-show="movie.imdbID" class="ng-hide details movieList"><a href="#/details/{{movie.rank}}"><img id="movieCovers" src="/data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}" /></a></li>
-        <li ng-show="movie.title" class="ng-hide details movieList">title: <a href="#/details/{{movie.rank}}">{{movie.title}}</a></li>
-        <li ng-show="movie.rated" class="ng-hide details movieList">rated: {{movie.rated}}</li>
-        <li ng-show="movie.runtime" class="ng-hide details movieList">runtime: {{movie.runtime}}</li>
-        <li ng-show="movie.genre" class="ng-hide details movieList">genre: {{movie.genre}}</li>
-        <li ng-show="movie.language" class="ng-hide details movieList">language: {{movie.language}}</li>
-        <li ng-show="movie.metascore" class="ng-hide details movieList">metascore:{{movie.metascore}}</li>
-        <li ng-show="movie.rank" class="ng-hide details movieList">rank:{{movie.rank}}</li>
-        <li class="details movieList">imdbID={{movie.imdbID}}</li>
-    </ul>
+
+  <div class="row">
+    <div  ng-repeat="movie in movies | filter:searchText | orderBy: 'rank'"  class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <a href="#/details/{{movie.rank}}">
+            <img id="movieCovers" src="/data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}" /></li>
+          </a>
+          <div class="caption">
+            <h3 ng-show="movie.title" class="ng-hide movieList">{{movie.title}}</h3>
+            <li ng-show="movie.rated" class="ng-hide movieList">rated: {{movie.rated}}</li>
+            <li ng-show="movie.runtime" class="ng-hide movieList">runtime: {{movie.runtime}}</li>
+            <li ng-show="movie.genre" class="ng-hide movieList">genre: {{movie.genre}}</li>
+            <li ng-show="movie.language" class="ng-hide movieList">language: {{movie.language}}</li>
+            <li ng-show="movie.metascore" class="ng-hide movieList">metascore:{{movie.metascore}}</li>
+            <li ng-show="movie.rank" class="ng-hide movieList">rank:{{movie.rank}}</li>
+            <li class="movieList">imdbID={{movie.imdbID}}</li>
+            <p><a href="#/details/{{movie.rank}}" class="btn btn-primary" role="button">Select</a></p>
+          </div>
+        </div>
+    </div>
   </div>
+
 </div>
