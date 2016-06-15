@@ -1,0 +1,1 @@
+angular.module("app.movie").controller("DetailsController",function($scope,ImdbMovies,$routeParams){ImdbMovies.getMovies().success(function(data){$scope.movies=data,$scope.movie=data[$routeParams.movieId-1],$scope.listSize=data.length})});

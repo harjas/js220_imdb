@@ -16,7 +16,7 @@ angular.module('app.movie')
     .when('/gallery',{
       templateUrl: '/templates/gallery.html'
     })
-    .when('/details/:movieId',{
+    .when('/details/\:movieId',{
       templateUrl: '/templates/details.html',
       controller: 'DetailsController'
     })

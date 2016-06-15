@@ -1,3 +1,12 @@
+.movieListItemWrapper {
+  height: 650px;
+  margin-bottom: 1em;
+}
+
+.thumbnail {
+  height: 100%;
+}
+
 #movieCovers {
   width: 15.125em;
   height: auto;
@@ -8,8 +17,11 @@
 }
 
 .details {
-  float: left;
-  clear:both;
+}
+
+.caption .btn {
+  position: absolute;
+  bottom: 2em;
 }
 
 .pagerDiv {

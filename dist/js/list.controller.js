@@ -1,0 +1,1 @@
+angular.module("app.movie").controller("ListController",function($scope,ImdbMovies){ImdbMovies.getMovies().success(function(data){$scope.movies=data}),$scope.getMovies=function(){ImdbMovies.getMovies().success(function(data){$scope.movies=data})}});
